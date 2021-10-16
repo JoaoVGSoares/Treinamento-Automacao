@@ -12,4 +12,7 @@ public class HomePageElementMapper {
 
     @FindBy(css = "button.btn.btn-default.button-search")
     public WebElement submit_search;
+
+    @FindBy(css = "#block_top_menu > ul > li:nth-child(1) > a")
+    public WebElement womenCategory;
 }

@@ -31,4 +31,9 @@ public class HomePage extends HomePageElementMapper {
         clickSubmit_search();
         System.out.println("Clicou em pesquisar");
     }
+
+    public void selectWomenCategory(){
+        womenCategory.click();
+        System.out.println("Selecinou a categoria Women");
+    }
 }

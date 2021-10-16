@@ -16,7 +16,7 @@ public class ShippingPage extends ShippingPageElementMapper {
 
     public void proceedToCheckout(){
         checkout.click();
-        System.out.println("Clicou em proceder.");
+        System.out.println("Clicou em proceder");
     }
     public String getPageHeading(){
         return pageHeading.getText();
