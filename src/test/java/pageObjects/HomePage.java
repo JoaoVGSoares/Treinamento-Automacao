@@ -12,6 +12,7 @@ public class HomePage extends HomePageElementMapper {
 
     public void clickBtnLogin(){
         login.click();
+        System.out.println("Clicou no botão Sign in");
     }
     public void clickSearch_query_top(){
         search_query_top.click();

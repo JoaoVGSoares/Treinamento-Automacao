@@ -47,7 +47,8 @@ public class SearchPage extends SearchPageElementMapper {
 
     public void chooseSearchResult(){
         Actions actions = new Actions(driver);
-        WebElement target = Browser.getCurrentDriver().findElement(By.cssSelector(String.format(".ajax_block_product:nth-child("+Utils.searchResult()+") .replace-2x")));
+        WebElement target = Browser.getCurrentDriver().findElement
+                (By.cssSelector(String.format(".ajax_block_product:nth-child("+Utils.searchResult()+") .replace-2x")));
         actions.moveToElement(target).perform();
         Browser.getCurrentDriver().findElement
                 (By.cssSelector(String.format(".ajax_block_product:nth-child("+Utils.searchResult()+") .button:nth-child(2) > span"))).click();
