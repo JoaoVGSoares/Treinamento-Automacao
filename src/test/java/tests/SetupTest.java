@@ -1,12 +1,11 @@
 package tests;
 
+import elementMapper.ProductPageElementMapper;
 import org.hamcrest.CoreMatchers;
-import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import pageObjects.HomePage;
-import pageObjects.LoginPage;
-import pageObjects.SearchPage;
+import org.openqa.selenium.WebElement;
+import pageObjects.*;
 import utils.Browser;
 import utils.Utils;
 
@@ -63,8 +62,9 @@ public class SetupTest extends BaseTests {
         //  assertTrue(Browser.getCurrentDriver().findElement(By.className("page-heading")).getText().contains("MY ACCOUNT"));
         //  System.out.println("Validou Minha Conta no site");
     }
+
     @Test
-    public void testSearch(){
+    public void testSearch() {
         String quest = "DRESS";
         String questResultQtd = "7";
         //Iniciar as páginas
@@ -76,7 +76,112 @@ public class SetupTest extends BaseTests {
 
         //Validar a pesquisa
         assertTrue(search.isSearchPage());
-        assertEquals(search.getTextLighter().replace("\"", ""),quest);
+        assertEquals(search.getTextLighter().replace("\"", ""), quest);
         assertThat(search.getTextHead_counter(), CoreMatchers.containsString(questResultQtd));
     }
+
+    @Test
+    public void testEnterProductPageAndAddToCart() {
+        String quest = Utils.getSearchObject();
+        String questResultQtd = "1";
+        //Iniciar as páginas
+        HomePage home = new HomePage();
+        SearchPage search = new SearchPage();
+        ProductPage productPage = new ProductPage();
+        ShoppingCartPage cart = new ShoppingCartPage();
+        LoginPage login = new LoginPage();
+        AddressPage addressPage = new AddressPage();
+        ShippingPage shipping = new ShippingPage();
+        PaymentPage payment = new PaymentPage();
+
+        //Fazer a pesquisa
+        home.doSearch(quest);
+
+        //Validar a pesquisa
+
+        assertTrue(search.isSearchPage());
+        assertEquals(search.getTextLighter().replace("\"", ""), quest);
+        //assertThat(search.getTextHead_counter(), CoreMatchers.containsString(questResultQtd));
+
+        //Acessar o produto
+        search.clickProductLink();
+
+        //Validar página do produto
+
+        assertTrue(Browser.getCurrentDriver().getCurrentUrl().contains(Utils.getSearchObject()));
+
+        //Adicionar ao carrinho
+
+        productPage.setQuantity();
+        productPage.setColor();
+        productPage.clickAddToCart();
+        productPage.clickProceedToCheckoutBtn();
+
+        //Validar página do carrinho
+        assertTrue(Browser.getCurrentDriver().getCurrentUrl().contains("controller=order"));
+
+        //Prosseguir
+        cart.proceedToCheckout();
+
+        //Fazer login
+
+        login.fillEmail();
+        System.out.println("Preencheu email");
+
+        login.fillPasswd();
+        System.out.println("Preencheu a senha");
+
+        login.clickBtnSubmitLogin();
+        System.out.println("Clicou em Sing in");
+
+        //Validar página de endereço
+        assertThat(addressPage.getPageHeading(), CoreMatchers.containsString("ADDRESSES"));
+
+        //Prosseguir
+        addressPage.proceedToCheckout();
+
+        //Validar página de envio
+        assertThat(shipping.getPageHeading(), CoreMatchers.containsString("SHIPPING"));
+
+        //Prosseguir para próxima página
+        shipping.agreeToTermsOfService();
+        shipping.proceedToCheckout();
+
+        //Validar página de pagamento
+        assertThat(payment.getPageHeading(), CoreMatchers.containsString("PLEASE CHOOSE YOUR PAYMENT METHOD"));
+
+        //Prosseguir com a compra
+
+        payment.paymentMethod(Utils.modoDePagamento());
+
+
+
+
+
+
+
+
+    }
 }
+
+        /*Limpar o carrinho
+        cart.delete();
+
+        //Validar produto no carrinho
+
+
+        //assertTrue(productPage.wasItemAddedToCart());
+
+
+        //assertTrue(productPage.checkoutBtn().isDisplayed());
+        // assertTrue(Browser.getCurrentDriver().findElement(By.id("layer_cart")).isDisplayed());
+
+
+        //assertTrue(Browser.getCurrentDriver().findElement(By.id("layer_cart")).getText().contains("Product successfully added to your shopping cart\n"));
+
+        //  assertTrue(productPage.getLayerCartText().equals("Product successfully added to your shopping cart\n"));
+
+
+    }
+
+}*/

@@ -13,4 +13,10 @@ public class SearchPageElementMapper {
 
     @FindBy(className = "heading-counter")
     public WebElement heading_counter;
+
+    @FindBy(css = "#center_column > ul > li > div > div.right-block > div.button-container > a.button.lnk_view.btn.btn-default > span")
+    public WebElement product_link;
+
+    @FindBy(css =  "#center_column > ul > li > div > div.right-block")
+    public WebElement linkBlock;
 }
