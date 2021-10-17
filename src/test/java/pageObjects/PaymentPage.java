@@ -26,4 +26,17 @@ public class PaymentPage extends PaymentPageElementMapper {
 
         }
     }
+    public String getCartQtdText(){
+        return cartQtd.getText();
+    }
+    public String getCartItem(){
+        return cartItem1.getText();
+    }
+    public boolean isCartQtd(){
+        return getCartQtdText().equals(Utils.quantidade());
+    }
+
+    public boolean isCartItem(){
+        return getCartItem().equalsIgnoreCase(new ProductPage().getCenterColumnTxt());
+    }
 }

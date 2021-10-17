@@ -10,6 +10,10 @@ public class ProductPage extends ProductPageElementMapper {
         PageFactory.initElements(Browser.getCurrentDriver(), this);
     }
 
+    public String getCenterColumnTxt(){
+        return centerColumnTxt.getText();
+    }
+
     public void clickAddToCart() {
         addToCart.click();
         System.out.println("Clicou em adicionar ao carrinho");
