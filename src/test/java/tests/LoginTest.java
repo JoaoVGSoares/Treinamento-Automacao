@@ -1,13 +1,14 @@
 package tests;
 
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.junit.Test;
 import pageObjects.*;
 
 import static org.junit.Assert.assertTrue;
 
-//@Description("Dado que já tenho cadastro e acesso a página de login quando preencho meus dados de acesso " +
-//      "e clico em Sign In então entrarei na minha conta")
 public class LoginTest extends BaseTests {
+    @Severity(SeverityLevel.CRITICAL)
     @Test
     public void loginTest() {
 

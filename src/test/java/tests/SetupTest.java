@@ -1,4 +1,4 @@
-package tests;
+/*package tests;
 
 import elementMapper.ProductPageElementMapper;
 import org.hamcrest.CoreMatchers;

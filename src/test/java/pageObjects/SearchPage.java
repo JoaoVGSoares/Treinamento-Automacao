@@ -5,14 +5,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Wait;
 import utils.Browser;
-import utils.Utils;
-
-import java.awt.event.MouseEvent;
+import utils.TestsInfo;
 
 import static utils.Browser.driver;
-import static utils.Browser.wait;
 
 public class SearchPage extends SearchPageElementMapper {
 
@@ -22,7 +18,7 @@ public class SearchPage extends SearchPageElementMapper {
 
     public void clickProductLink() {
         product_link.click();
-        System.out.println("Acessou a página do produto " + Utils.getSearchObject());
+        System.out.println("Acessou a página do produto " + TestsInfo.getSearchObject());
     }
 
     public String getTextNavigation_page() {
@@ -46,9 +42,9 @@ public class SearchPage extends SearchPageElementMapper {
 
         Actions actions = new Actions(driver);
         WebElement target = Browser.getCurrentDriver().findElement
-                (By.cssSelector(String.format(".ajax_block_product:nth-child("+Utils.searchResult()+") .replace-2x")));
+                (By.cssSelector(String.format(".ajax_block_product:nth-child("+TestsInfo.searchResult()+") .replace-2x")));
         actions.moveToElement(target).perform();
         Browser.getCurrentDriver().findElement
-                (By.cssSelector(String.format(".ajax_block_product:nth-child("+Utils.searchResult()+") .button:nth-child(2) > span"))).click();
+                (By.cssSelector(String.format(".ajax_block_product:nth-child("+TestsInfo.searchResult()+") .button:nth-child(2) > span"))).click();
     }
 }

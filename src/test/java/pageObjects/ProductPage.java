@@ -3,7 +3,7 @@ package pageObjects;
 import elementMapper.ProductPageElementMapper;
 import org.openqa.selenium.support.PageFactory;
 import utils.Browser;
-import utils.Utils;
+import utils.TestsInfo;
 
 public class ProductPage extends ProductPageElementMapper {
     public ProductPage() {
@@ -26,43 +26,43 @@ public class ProductPage extends ProductPageElementMapper {
 
     public void setQuantity() {
         quantityWanted.clear();
-        quantityWanted.sendKeys(Utils.quantidade());
-        System.out.println("Escolheu a quantidade " + Utils.quantidade());
+        quantityWanted.sendKeys(TestsInfo.quantidade());
+        System.out.println("Escolheu a quantidade " + TestsInfo.quantidade());
     }
 
     public void setSize() {
         chooseSize.click();
-        chooseSize.sendKeys(Utils.size());
-        System.out.println("Escolheu o tamanho " + Utils.size());
+        chooseSize.sendKeys(TestsInfo.size());
+        System.out.println("Escolheu o tamanho " + TestsInfo.size());
 
 
     }
 
     public void setColor() {
-        if (Utils.color().equalsIgnoreCase("beige")) {
+        if (TestsInfo.color().equalsIgnoreCase("beige")) {
             colorBeige.click();
         }
-        if (Utils.color().equalsIgnoreCase("white")) {
+        if (TestsInfo.color().equalsIgnoreCase("white")) {
             colorWhite.click();
         }
-        if (Utils.color().equalsIgnoreCase("black")) {
+        if (TestsInfo.color().equalsIgnoreCase("black")) {
             colorBlack.click();
         }
-        if (Utils.color().equalsIgnoreCase("orange")) {
+        if (TestsInfo.color().equalsIgnoreCase("orange")) {
             colorOrange.click();
         }
-        if (Utils.color().equalsIgnoreCase("blue")) {
+        if (TestsInfo.color().equalsIgnoreCase("blue")) {
             colorBlue.click();
         }
-        if (Utils.color().equalsIgnoreCase("green")) {
+        if (TestsInfo.color().equalsIgnoreCase("green")) {
             colorGreen.click();
         }
-        if (Utils.color().equalsIgnoreCase("yellow")) {
+        if (TestsInfo.color().equalsIgnoreCase("yellow")) {
             colorYellow.click();
         }
-        if (Utils.color().equalsIgnoreCase("pink")) {
+        if (TestsInfo.color().equalsIgnoreCase("pink")) {
             colorPink.click();
         }
-        System.out.println("Escolheu a cor " + Utils.color().toLowerCase());
+        System.out.println("Escolheu a cor " + TestsInfo.color().toLowerCase());
     }
 }

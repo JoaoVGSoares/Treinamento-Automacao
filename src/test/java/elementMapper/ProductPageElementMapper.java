@@ -45,6 +45,4 @@ public class ProductPageElementMapper {
     public WebElement chooseSize;
 
 
-
-
 }

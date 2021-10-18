@@ -3,6 +3,7 @@ package pageObjects;
 import elementMapper.LoginPageElementMapper;
 import org.openqa.selenium.support.PageFactory;
 import utils.Browser;
+import utils.TestsInfo;
 
 public class LoginPage extends LoginPageElementMapper {
 
@@ -21,5 +22,12 @@ public class LoginPage extends LoginPageElementMapper {
     public void clickBtnSubmitLogin(){
         SubmitLogin.click();
         System.out.println("Clicou em Sing in");
+    }
+
+    public void createAccount(){
+        createAccountEmail.sendKeys(TestsInfo.emailAccount());
+        System.out.println("Preencheu o email");
+        createAccountBtn.click();
+        System.out.println("Clicou em create account");
     }
 }

@@ -1,9 +1,10 @@
 package pageObjects;
 
 import elementMapper.PaymentPageElementMapper;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.support.PageFactory;
 import utils.Browser;
-import utils.Utils;
+import utils.TestsInfo;
 
 public class PaymentPage extends PaymentPageElementMapper {
     public PaymentPage() {
@@ -14,15 +15,15 @@ public class PaymentPage extends PaymentPageElementMapper {
         return pageHeading.getText();
     }
 
-    public void paymentMethod(String option){
-        if (option.equalsIgnoreCase("bank wire")){
+    public void paymentMethod(){
+        if (TestsInfo.modoDePagamento().equalsIgnoreCase("bank wire")){
             bankWire.click();
-            System.out.println("Selecionou o pagamento por "+ Utils.modoDePagamento());
+            System.out.println("Selecionou o pagamento por "+ TestsInfo.modoDePagamento());
 
         }
-        if (option.equalsIgnoreCase("check")){
+        if (TestsInfo.modoDePagamento().equalsIgnoreCase("check")){
             check.click();
-            System.out.println("Selecionou o pagamento por "+ Utils.modoDePagamento());
+            System.out.println("Selecionou o pagamento por "+ TestsInfo.modoDePagamento());
 
         }
     }
@@ -33,7 +34,7 @@ public class PaymentPage extends PaymentPageElementMapper {
         return cartItem1.getText();
     }
     public boolean isCartQtd(){
-        return getCartQtdText().equals(Utils.quantidade());
+        return getCartQtdText().equals(TestsInfo.quantidade());
     }
 
     public boolean isCartItem(){
