@@ -15,4 +15,7 @@ public class HomePageElementMapper {
 
     @FindBy(css = "#block_top_menu > ul > li:nth-child(1) > a")
     public WebElement womenCategory;
+
+    @FindBy(id = "homepage-slider")
+    public WebElement homePageSlider;
 }

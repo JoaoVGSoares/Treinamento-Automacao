@@ -36,4 +36,7 @@ public class HomePage extends HomePageElementMapper {
         womenCategory.click();
         System.out.println("Selecinou a categoria Women");
     }
+    public boolean isHomePage(){
+       return homePageSlider.isDisplayed();
+    }
 }
