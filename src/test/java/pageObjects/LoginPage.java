@@ -7,24 +7,27 @@ import utils.TestsInfo;
 
 public class LoginPage extends LoginPageElementMapper {
 
-    public LoginPage(){
+    public LoginPage() {
         PageFactory.initElements(Browser.getCurrentDriver(), this);
     }
-    public void fillEmail(){
-       email.sendKeys("joao.v.g.soares@gmail.com");
+
+    public void fillEmail() {
+        email.sendKeys("joao.v.g.soares@gmail.com");
         System.out.println("Preencheu email");
     }
-    public void fillPasswd(){
+
+    public void fillPasswd() {
         passwd.sendKeys("#12345");
         System.out.println("Preencheu a senha");
 
     }
-    public void clickBtnSubmitLogin(){
+
+    public void clickBtnSubmitLogin() {
         SubmitLogin.click();
         System.out.println("Clicou em Sing in");
     }
 
-    public void createAccount(){
+    public void createAccount() {
         createAccountEmail.sendKeys(TestsInfo.emailAccount());
         System.out.println("Preencheu o email");
         createAccountBtn.click();

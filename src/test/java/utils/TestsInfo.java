@@ -38,7 +38,6 @@ public class TestsInfo {
     }
 
     //create an account info
-    //Gender Mr or Mrs
     public static String gender() {return "Mr";}
     public static String customerFirstName() {return "Aaaa";}
     public static String customerLastName() {return "Eeee";}

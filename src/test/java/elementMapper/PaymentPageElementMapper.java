@@ -14,9 +14,4 @@ public class PaymentPageElementMapper {
     @FindBy(css = "#HOOK_PAYMENT > div:nth-child(2) > div > p > a")
     public WebElement check;
 
-    @FindBy(css =" td.cart_quantity.text-center > span")
-    public WebElement cartQtd;
-
-    @FindBy(css =" td.cart_description > p")
-    public WebElement cartItem1;
 }

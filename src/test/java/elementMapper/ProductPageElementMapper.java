@@ -5,9 +5,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class ProductPageElementMapper {
 
-    @FindBy(css = "#center_column > div > div > div.pb-center-column.col-xs-12.col-sm-4 > h1")
-    public WebElement centerColumnTxt;
-
     @FindBy(css = "button.exclusive")
     public WebElement addToCart;
 

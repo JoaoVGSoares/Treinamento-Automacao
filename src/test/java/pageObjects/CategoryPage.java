@@ -10,21 +10,21 @@ import utils.Browser;
 import static utils.Browser.driver;
 
 public class CategoryPage extends CategoryPageElementMapper {
-    public CategoryPage(){
-        PageFactory.initElements(Browser.getCurrentDriver(),this);
+    public CategoryPage() {
+        PageFactory.initElements(Browser.getCurrentDriver(), this);
     }
 
-    public void chooseFirstProduct(){
+    public void chooseFirstProduct() {
         Actions actions = new Actions(driver);
         WebElement target = Browser.getCurrentDriver().findElement
                 (By.cssSelector(String.format("#center_column > ul > li:nth-child(1) > div > div.left-block > div > a.product_img_link > img")));
         actions.moveToElement(target).perform();
         Browser.getCurrentDriver().findElement
                 (By.cssSelector("#center_column > ul > li:nth-child(1) > div > div.right-block > div.button-container > a.button.ajax_add_to_cart_button.btn.btn-default > span")).click();
-        System.out.println("Escolheu o primeiro produto");
     }
-    public void clickProceedToCheckout(){
+
+    public void clickProceedToCheckout() {
         proceedToCheckout.click();
-        System.out.println("Clicou para prosseguir");
     }
+
 }

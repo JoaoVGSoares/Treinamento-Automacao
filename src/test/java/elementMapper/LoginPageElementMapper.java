@@ -9,7 +9,7 @@ public class LoginPageElementMapper {
     public WebElement passwd;
     public WebElement SubmitLogin;
 
-    @FindBy(id ="email_create")
+    @FindBy(id = "email_create")
     public WebElement createAccountEmail;
 
     @FindBy(css = "#SubmitCreate > span")

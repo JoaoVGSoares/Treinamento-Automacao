@@ -16,35 +16,15 @@ public class SearchPage extends SearchPageElementMapper {
         PageFactory.initElements(Browser.getCurrentDriver(), this);
     }
 
-    public void clickProductLink() {
-        product_link.click();
-        System.out.println("Acessou a página do produto " + TestsInfo.getSearchObject());
-    }
 
-    public String getTextNavigation_page() {
-        return navigation_page.getText();
-    }
-
-    public String getTextLighter() {
-        return lighter.getText();
-    }
-
-    public String getTextHead_counter() {
-        return heading_counter.getText();
-    }
-
-    public boolean isSearchPage() {
-        return getTextNavigation_page().equals("Search");
-    }
-
-
-    public void chooseSearchResult(){
+    public void chooseSearchResult() {
 
         Actions actions = new Actions(driver);
         WebElement target = Browser.getCurrentDriver().findElement
-                (By.cssSelector(String.format(".ajax_block_product:nth-child("+TestsInfo.searchResult()+") .replace-2x")));
+                (By.cssSelector(String.format(".ajax_block_product:nth-child(" + TestsInfo.searchResult() + ") .replace-2x")));
+
         actions.moveToElement(target).perform();
         Browser.getCurrentDriver().findElement
-                (By.cssSelector(String.format(".ajax_block_product:nth-child("+TestsInfo.searchResult()+") .button:nth-child(2) > span"))).click();
+                (By.cssSelector(String.format(".ajax_block_product:nth-child(" + TestsInfo.searchResult() + ") .button:nth-child(2) > span"))).click();
     }
 }

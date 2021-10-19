@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.junit.Test;
@@ -11,6 +12,9 @@ import pageObjects.MyAccountPage;
 import static org.junit.Assert.assertTrue;
 
 public class CreateAnAccountTest extends BaseTests {
+    @Description("Dado que preencho os dados obrigatórios para criar uma conta " +
+            "Quando clico no botão 'Register' " +
+            "Então acessarei a página 'My Account'")
     @Severity(SeverityLevel.CRITICAL)
     @Test
     public void createAnAccountTest() {

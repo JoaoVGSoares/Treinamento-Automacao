@@ -1,15 +1,20 @@
 package tests;
 
+import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.junit.Test;
 import pageObjects.*;
 
-import javax.swing.text.Highlighter;
-
 import static org.junit.Assert.assertTrue;
 
 public class BuyProductFromCategoryPageTest extends BaseTests {
+    @Description("Dado que acesso a página 'Category' " +
+            "E são exibidos produtos " +
+            "E clico no botão 'Quick view' de um produto " +
+            "E clico no botão 'Add to cart' " +
+            "Quando finalizo a compra " +
+            "Então verei o aviso 'Your order on My Store is complete.'")
    @Severity(SeverityLevel.CRITICAL)
     @Test
     public void BuyProductFromCategoryPage() {

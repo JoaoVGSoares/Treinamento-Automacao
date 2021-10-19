@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.junit.Test;
@@ -9,6 +10,12 @@ import utils.TestsInfo;
 import static org.junit.Assert.assertTrue;
 
 public class BuyProductFromSearchTest extends BaseTests {
+    @Description("Dado que pesquiso por um produto " +
+            "E são exibidos itens na página Search " +
+            "E acesso a página de um produto " +
+            "E clico no botão 'Add To Cart' " +
+            "Quando finalizo a compra " +
+            "Então verei o aviso 'Your order on My Store is complete.'")
     @Severity(SeverityLevel.CRITICAL)
     @Test
     public void buyProductFromSearchPage() {

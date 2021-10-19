@@ -10,6 +10,4 @@ public class ShippingPageElementMapper {
     @FindBy(css = "#form > p > button > span")
     public WebElement checkout;
 
-    @FindBy(className = "page-heading")
-    public WebElement pageHeading;
 }

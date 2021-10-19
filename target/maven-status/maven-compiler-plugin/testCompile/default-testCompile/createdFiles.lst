@@ -15,6 +15,7 @@ elementMapper\MyAccountPageElementMapper.class
 elementMapper\HomePageElementMapper.class
 pageObjects\PaymentPage.class
 pageObjects\OrderConfirmationPage.class
+tests\OpenHomePageTest.class
 elementMapper\ShippingPageElementMapper.class
 utils\Utils.class
 pageObjects\ShippingPage.class

@@ -5,14 +5,11 @@ import org.openqa.selenium.support.PageFactory;
 import utils.Browser;
 
 public class AddressPage extends AddressPageElementMapper {
-    public AddressPage(){
-        PageFactory.initElements(Browser.getCurrentDriver(),this);
-    }
-    public void proceedToCheckout(){
-        checkout.click();
+    public AddressPage() {
+        PageFactory.initElements(Browser.getCurrentDriver(), this);
     }
 
-    public String getPageHeading(){
-       return pageHeading.getText();
+    public void proceedToCheckout() {
+        checkout.click();
     }
 }

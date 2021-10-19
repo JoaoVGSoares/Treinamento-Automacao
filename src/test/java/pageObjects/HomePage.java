@@ -6,24 +6,28 @@ import utils.Browser;
 
 public class HomePage extends HomePageElementMapper {
 
-    public HomePage(){
-        PageFactory.initElements(Browser.getCurrentDriver(),this);
+    public HomePage() {
+        PageFactory.initElements(Browser.getCurrentDriver(), this);
     }
 
-    public void clickBtnLogin(){
+    public void clickBtnLogin() {
         login.click();
         System.out.println("Clicou no botão Sign in");
     }
-    public void clickSearch_query_top(){
+
+    public void clickSearch_query_top() {
         search_query_top.click();
     }
-    public void sendKeysSearch_query_top(String keys){
+
+    public void sendKeysSearch_query_top(String keys) {
         search_query_top.sendKeys(keys);
     }
-    public void clickSubmit_search(){
+
+    public void clickSubmit_search() {
         submit_search.click();
     }
-    public void doSearch(String quest){
+
+    public void doSearch(String quest) {
         clickSearch_query_top();
         System.out.println("Clicou na pesquisa");
         sendKeysSearch_query_top(quest);
@@ -32,8 +36,12 @@ public class HomePage extends HomePageElementMapper {
         System.out.println("Clicou em pesquisar");
     }
 
-    public void selectWomenCategory(){
+    public void selectWomenCategory() {
         womenCategory.click();
         System.out.println("Selecinou a categoria Women");
+    }
+
+    public boolean isHomePage() {
+        return homePageSlider.isDisplayed();
     }
 }

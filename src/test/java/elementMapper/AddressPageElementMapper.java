@@ -7,8 +7,4 @@ public class AddressPageElementMapper {
     @FindBy(css = "#center_column > form > p > button > span")
     public WebElement checkout;
 
-    @FindBy(className = "page-heading")
-    public WebElement pageHeading;
-
-
 }

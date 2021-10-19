@@ -5,15 +5,15 @@ import org.openqa.selenium.support.PageFactory;
 import utils.Browser;
 
 public class MyAccountPage extends MyAccountPageElementMapper {
-    public MyAccountPage(){
-        PageFactory.initElements(Browser.getCurrentDriver(),this);
+    public MyAccountPage() {
+        PageFactory.initElements(Browser.getCurrentDriver(), this);
     }
 
-    public String getCenterColumnText(){
+    public String getCenterColumnText() {
         return centerColumn.getText();
     }
 
-    public boolean isMyAccountPage(){
+    public boolean isMyAccountPage() {
         return getCenterColumnText().equalsIgnoreCase("MY ACCOUNT");
     }
 
