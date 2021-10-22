@@ -12,7 +12,6 @@ public class HomePage extends HomePageElementMapper {
 
     public void clickBtnLogin() {
         login.click();
-        System.out.println("Clicou no botão Sign in");
     }
 
     public void clickSearch_query_top() {
@@ -29,16 +28,12 @@ public class HomePage extends HomePageElementMapper {
 
     public void doSearch(String quest) {
         clickSearch_query_top();
-        System.out.println("Clicou na pesquisa");
         sendKeysSearch_query_top(quest);
-        System.out.println("Digitou o termo");
         clickSubmit_search();
-        System.out.println("Clicou em pesquisar");
     }
 
     public void selectWomenCategory() {
         womenCategory.click();
-        System.out.println("Selecinou a categoria Women");
     }
 
     public boolean isHomePage() {

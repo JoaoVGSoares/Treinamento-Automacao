@@ -30,6 +30,7 @@ public class TestsInfo {
         return "Bank wire";
     }
 
+    //gerador de emails
     public static String emailAccount() {
         Random random = new Random();
         int user = random.nextInt(1000);
