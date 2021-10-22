@@ -12,20 +12,24 @@ public class ProductPage extends ProductPageElementMapper {
 
     public void clickAddToCart() {
         addToCart.click();
+        System.out.println("Clicou em adicionar ao carrinho");
     }
 
     public void clickProceedToCheckoutBtn() {
         proceedToCheckoutBtn.click();
+        System.out.println("Clicou em ir pro checkout");
     }
 
     public void setQuantity() {
         quantityWanted.clear();
         quantityWanted.sendKeys(TestsInfo.quantidade());
+        System.out.println("Escolheu a quantidade " + TestsInfo.quantidade());
     }
 
     public void setSize() {
         chooseSize.click();
         chooseSize.sendKeys(TestsInfo.size());
+        System.out.println("Escolheu o tamanho " + TestsInfo.size());
 
 
     }
@@ -55,5 +59,6 @@ public class ProductPage extends ProductPageElementMapper {
         if (TestsInfo.color().equalsIgnoreCase("pink")) {
             colorPink.click();
         }
+        System.out.println("Escolheu a cor " + TestsInfo.color().toLowerCase());
     }
 }

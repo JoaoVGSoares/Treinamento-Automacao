@@ -14,9 +14,12 @@ public class PaymentPage extends PaymentPageElementMapper {
     public void paymentMethod() {
         if (TestsInfo.modoDePagamento().equalsIgnoreCase("bank wire")) {
             bankWire.click();
+            System.out.println("Selecionou o pagamento por " + TestsInfo.modoDePagamento());
+
         }
         if (TestsInfo.modoDePagamento().equalsIgnoreCase("check")) {
             check.click();
+            System.out.println("Selecionou o pagamento por " + TestsInfo.modoDePagamento());
 
         }
     }
