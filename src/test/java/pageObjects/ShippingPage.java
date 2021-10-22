@@ -11,11 +11,9 @@ public class ShippingPage extends ShippingPageElementMapper {
 
     public void agreeToTermsOfService() {
         termsOfService.click();
-        System.out.println("Concordou com os termos de serviço.");
     }
 
     public void proceedToCheckout() {
         checkout.click();
-        System.out.println("Clicou em proceder");
     }
 }
